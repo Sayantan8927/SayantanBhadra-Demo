@@ -1,0 +1,13 @@
+body {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.clock {
+  font-size: 80px;
+  color: #00ffcc;
+  font-family: 'Courier New', Courier, monospace;
+}
