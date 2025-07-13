@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayantan Bhadra Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #f0f4ff, #e4f9ff);
+      color: #222;
+      overflow-x: hidden;
+    }
+    .nav {
+      background-color: #00bbf9;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .nav ul {
+      display: flex;
+      list-style: none;
+    }
+    .nav li {
+      margin: 0 15px;
+      color: white;
+      cursor: pointer;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+    .nav li:hover {
+      transform: scale(1.1);
+      color: #fee440;
+    }
+    #signup {
+      background-color: #9b5de5;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    #signup:hover {
+      background-color: #7b35d4;
+    }
+    .hero-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(to left, #fee440, #f15bb5);
+      animation: fadeIn 1.5s ease-in;
+    }
+    .hero-discription {
+      max-width: 500px;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      animation: slideIn 1.2s ease;
+    }
+    .hero-section img {
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      animation: bounce 2s infinite;
+    }
+    .body-section {
+      padding: 40px 20px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    .body-discription {
+      font-size: 2rem;
+      color: #9b5de5;
+      margin-bottom: 30px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    figure {
+      width: 250px;
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    figure:hover {
+      transform: scale(1.05);
+    }
+    figure img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    figcaption {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .price {
+      color: #f15bb5;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    footer {
+      background: linear-gradient(to right, #12123e, #1a1a50);
+      color: white;
+      padding: 50px 20px 20px 20px;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+    .footer-section h3, .footer-section h4 {
+      color: #00f5d4;
+    }
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-section ul li {
+      margin-bottom: 8px;
+    }
+    .footer-section ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-section ul li a:hover {
+      color: #fee440;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #999;
+    }
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
+      z-index: 9999;
+    }
+    .chat-header {
+      background-color: #9b5de5;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .chat-body {
+      padding: 10px;
+      height: 200px;
+      overflow-y: auto;
+    }
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    .chat-input input {
+      flex-grow: 1;
+      padding: 10px;
+      border: none;
+    }
+    .chat-input button {
+      background-color: #00bbf9;
+      color: white;
+      border: none;
+      padding: 10px;
+    }
+    .toggle-chat {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #00bbf9;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 9999;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <ul>
+      <li>Home</li>
+      <li>Services</li>
+      <li>Product</li>
+      <li>Contact us</li>
+    </ul>
+    <button id="signup">Sign up</button>
+  </div>
+  <div class="hero-section">
+    <h3 class="hero-discription">
+      Welcome to Sayantan Bhadra's world of tech — Explore smart gadgets & AI-powered support.
+    </h3>
+    <img src="./Sayantan3.0.png" alt="Hero Image" />
+  </div>
+  <div class="body-section">
+    <h4 class="body-discription">Best of Electronics</h4>
+    <div class="products">
+      <figure>
+        <img src="./Sayantan4.0.webp" alt="Printer Image">
+        <figcaption>Printer</figcaption>
+        <div class="price">₹5,999</div>
+      </figure>
+      <figure>
+        <img src="./-original-imah4jz66dmcwhmd.webp" alt="iPhone Image">
+        <figcaption>iPhone</figcaption>
+        <div class="price">₹79,900</div>
+      </figure>
+      <figure>
+        <img src="./160-48-particle-board-32-5-wtvueris-wakefit-35-5-50-wenge-frosty-original-imahag6gsunequwq.webp" alt="TV Image">
+        <figcaption>Smart TV</figcaption>
+        <div class="price">₹32,499</div>
+      </figure>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Sayantan Bhadra's Developer Portfolio</h3>
+        <p>Crafting digital magic with passion and purpose. Let's innovate together!</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Sayantan Bhadra. All rights reserved.</p>
+    </div>
+  </footer>
+  <button class="toggle-chat" onclick="toggleChat()">💬</button>
+  <div class="chatbot" id="chatbot">
+    <div class="chat-header">Sayantan AI Assistant</div>
+    <div class="chat-body" id="chat-body"></div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Ask about products, help, etc...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  <script>
+    document.getElementById('signup').addEventListener('click', function () {
+      alert('Thanks for your interest! Sign-up is coming soon.');
+    });
+    function toggleChat() {
+      const chatbot = document.getElementById('chatbot');
+      chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+    }
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const text = input.value.trim();
+      if (text === '') return;
+      const chatBody = document.getElementById('chat-body');
+      const userMsg = document.createElement('div');
+      userMsg.textContent = '🧑 You: ' + text;
+      chatBody.appendChild(userMsg);
+      const aiMsg = document.createElement('div');
+      aiMsg.textContent = '🤖 AI: Thank you for asking about "' + text + '". A detailed answer will appear here soon!';
+      chatBody.appendChild(aiMsg);
+      chatBody.scrollTop = chatBody.scrollHeight;
+      input.value = '';
+    }
+  </script>
+</body>
+</html>

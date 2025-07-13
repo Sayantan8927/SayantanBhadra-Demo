@@ -1,0 +1,28 @@
+/* Generic image style
+img { */
+  /* max-width: 100%;
+  height: auto; */
+  /* border-radius: 10px;
+}
+
+/* Specific styles */
+/* .hero-section img {
+  width: 300px;
+/* } */
+/* .products figure img {
+  width: 100%; */  
+/* } */
+/* <figure> ... </figure> */
+/* .body-section {
+  justify-content: space-between; */
+/* } */  
+.chatbot {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: scale(0);
+  opacity: 0;
+}
+.chatbot.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
