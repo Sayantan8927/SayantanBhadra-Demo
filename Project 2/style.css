@@ -1,0 +1,67 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: linear-gradient(to right, #9b5de5, #00bbf9, #00f5d4);
+  min-height: 100vh;
+  padding: 2rem;
+  color: white;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.players {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.player h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.player img {
+  width: 100px;
+  height: 100px;
+  animation: spin 0.5s ease-in-out;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background: #f15bb5;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #f15bb5;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.result {
+  font-size: 2rem;
+  margin-top: 2rem;
+  font-weight: bold;
+}
